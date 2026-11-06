@@ -38,7 +38,7 @@ public sealed class LibraryService(IBookRepository books, ILoanRepository loans)
     public (Loan? Loan, string? Error) CreateLoan(CreateLoanRequest request)
     {
         var book = books.GetById(request.BookId);
-        if (book is null) return (null, "No existe el libro indicado.");
+        if (book is null) return (null, "No existe el libro indicadoo.");
         if (book.AvailableCopies <= 0) return (null, "No hay ejemplares disponibles.");
         if (request.DueDate <= request.LoanDate) return (null, "La fecha de devolución debe ser posterior al préstamo.");
 
